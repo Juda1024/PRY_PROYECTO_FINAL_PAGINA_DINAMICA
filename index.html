@@ -56,6 +56,7 @@
                         <ul>
                             <li><a href="./views/team.html" onclick="loadPage(event,this.href)">Equipo</a></li>
                             <li><a href="./views/testimonials.html" onclick="loadPage(event,this.href)">Testimonios</a>
+                            <li><a href="./views/faq.html" onclick="loadPage(event,this.href)">Preguntas Frecuentes</a></li>
                         </ul>
                     </li>
                     <li><a href="./views/services.html" onclick="loadPage(event,this.href)">Servicios</a></li>
@@ -177,82 +178,77 @@
 
     <script src="https://cdn.jsdelivr.net/npm/purecounterjs@2.3.1/dist/purecounter_vanilla.js"></script>
 
-    // REEMPLAZA tu función loadPage actual en index.html por ESTA:
+
 
     <script>
-        // Función para cargar contenido dinámico
-        function loadPage(event, url) {
-            event.preventDefault(); // Prevenir el comportamiento por defecto
-            const main = document.getElementById('main-content');
+    function loadPage(event, url) {
+        event.preventDefault(); 
+        const main = document.getElementById('main-content');
+        
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
 
-            fetch(url)
-                .then(response => response.text())
-                .then(html => {
+                main.innerHTML = html;
 
-                    main.innerHTML = html;
+                AOS.init({
+                    duration: 1000,
+                    easing: 'ease-in-out',
+                    once: true,
+                    mirror: false
+                });
 
+                if (window.glightboxInstance) {
+                    window.glightboxInstance.destroy();
+                }
+                window.glightboxInstance = GLightbox({
+                    selector: '.glightbox'
+                });
 
-                    AOS.init({
-                        duration: 1000,
-                        easing: 'ease-in-out',
-                        once: true,
-                        mirror: false
+                const swiperElements = document.querySelectorAll('.init-swiper');
+                if (swiperElements.length > 0) {
+                    swiperElements.forEach(function(swiperElement) {
+                        let config = JSON.parse(swiperElement.querySelector('.swiper-config').innerHTML.trim());
+                        new Swiper(swiperElement, config);
                     });
+                }
 
-                    if (window.glightboxInstance) {
-                        window.glightboxInstance.destroy();
-                    }
-                    window.glightboxInstance = GLightbox({
-                        selector: '.glightbox'
+                const isotopeContainer = document.querySelector('.isotope-container');
+                if (isotopeContainer) { 
+                    imagesLoaded(isotopeContainer, function () {
+                        const isotope = new Isotope(isotopeContainer, {
+                            itemSelector: '.isotope-item',
+                            layoutMode: isotopeContainer.closest('.isotope-layout').getAttribute('data-layout') || 'masonry',
+                            filter: isotopeContainer.closest('.isotope-layout').getAttribute('data-default-filter') || '*'
+                        });
+                        const filters = document.querySelectorAll('.isotope-filters li');
+                        filters.forEach(function(filter) {
+                            filter.addEventListener('click', function() {
+                                filters.forEach(f => f.classList.remove('filter-active'));
+                                this.classList.add('filter-active');
+                                isotope.arrange({
+                                    filter: this.getAttribute('data-filter')
+                                });
+                            }, false);
+                        });
                     });
+                }
 
+                new PureCounter();
 
-                    const swiperElements = document.querySelectorAll('.init-swiper');
-                    if (swiperElements.length > 0) {
-                        swiperElements.forEach(function (swiperElement) {
-                            let config = JSON.parse(swiperElement.querySelector('.swiper-config').innerHTML.trim());
-                            new Swiper(swiperElement, config);
-                        });
-                    }
+                const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+                if (popoverTriggerList.length > 0) {
+                    [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
+                        trigger: 'hover' 
+                    }));
+                }
 
+            })
+            .catch(error => console.error('Error al cargar la página:', error));
+    }
 
-                    const isotopeContainer = document.querySelector('.isotope-container');
-                    if (isotopeContainer) {
-
-
-                        imagesLoaded(isotopeContainer, function () {
-
-
-                            const isotope = new Isotope(isotopeContainer, {
-                                itemSelector: '.isotope-item',
-                                layoutMode: isotopeContainer.closest('.isotope-layout').getAttribute('data-layout') || 'masonry',
-                                filter: isotopeContainer.closest('.isotope-layout').getAttribute('data-default-filter') || '*'
-                            });
-
-
-                            const filters = document.querySelectorAll('.isotope-filters li');
-                            filters.forEach(function (filter) {
-                                filter.addEventListener('click', function () {
-                                    filters.forEach(f => f.classList.remove('filter-active'));
-                                    this.classList.add('filter-active');
-                                    isotope.arrange({
-                                        filter: this.getAttribute('data-filter')
-                                    });
-                                }, false);
-                            });
-                        });
-                    }
-
-
-                    new PureCounter();
-
-                })
-                .catch(error => console.error('Error al cargar la página:', error));
-        }
-
-
-        loadPage(new Event('load'), './views/home.html');
-    </script>
+    loadPage(new Event('load'), './views/home.html');
+</script>
 
 </body>
 
