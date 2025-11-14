@@ -53,16 +53,7 @@
           <li class="dropdown"><a href="./views/about.html" onclick="loadPage(event,this.href)"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="./views/team.html" onclick="loadPage(event,this.href)">Team</a></li>
-              <li><a href="./views/testimonials.html" onclick="loadPage(event,this.href)">Testimonials</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
+              <li><a href="./views/testimonials.html" onclick="loadPage(event,this.href)">Testimonials</a>
             </ul>
           </li>
           <li><a href="./views/services.html" onclick="loadPage(event,this.href)">Services</a></li>
@@ -176,19 +167,27 @@
   <!-- Main JS File -->
   <script src="./public/template/assets/js/main.js"></script>
 
+ <script src="https://cdn.jsdelivr.net/npm/purecounterjs@2.3.1/dist/purecounter_vanilla.js"></script>
 
-  <script>
-        function loadPage(event, url) {
-            event.preventDefault();
-            const main = document.getElementById('main-content');
-            fetch(url)
-                .then(response => response.text())
-                .then(html => main.innerHTML = html);
-        }
+ <script>
+    // Función para cargar contenido dinámico
+    function loadPage(event, url) {
+        event.preventDefault();  // Prevenir el comportamiento por defecto de los enlaces
+        const main = document.getElementById('main-content');
+        
+        // Cargar el contenido de la página usando fetch
+        fetch(url)
+            .then(response => response.text())  // Obtener el HTML de la página solicitada
+            .then(html => {
 
-        loadPage(new Event('load'), './views/home.html');
-    </script>
+                main.innerHTML = html;
 
+                new PureCounter();
+            });
+    }
+
+    loadPage(new Event('load'), './views/home.html');
+</script>
 
 </body>
 
