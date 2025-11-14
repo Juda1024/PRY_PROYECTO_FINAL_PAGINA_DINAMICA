@@ -2,11 +2,11 @@
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Contact</h1>
+        <h1 class="mb-2 mb-lg-0">Contacto</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Contact</li>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="current">Contacto</li>
           </ol>
         </nav>
       </div>
@@ -27,15 +27,15 @@
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>Dirección</h3>
+                <p>Av. Genral Rumiñahui, Quito, Pichincha</p>
               </div>
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
-                <h3>Call Us</h3>
+                <h3>Llamanos</h3>
                 <p>+1 5589 55488 55</p>
               </div>
             </div><!-- End Info Item -->
@@ -43,47 +43,75 @@
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <h3>Correo</h3>
+                <p>info@AETHERLAB.com</p>
               </div>
             </div><!-- End Info Item -->
 
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form id="contactForm" action="../forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200" target="hiddenFrame">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input  type="text" name="name" class="form-control" placeholder="Tu nombre" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input id="emailAddress" type="email" class="form-control" name="email" placeholder="Tu Email" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" class="form-control" name="subject" placeholder="Asunto" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
+                  <div class="loading">Cargando...</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="sent-message">Se ha enviado tu mensaje, gracias!</div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit" data-bs-toggle="modal" data-bs-target="#modalRegistro">Enviar mensaje</button>
                 </div>
 
               </div>
             </form>
+            <iframe name="hiddenFrame" style="display: none;"></iframe>
           </div><!-- End Contact Form -->
 
         </div>
 
       </div>
 
+
     </section><!-- /Contact Section -->
+
+      <div class="modal fade" id="modalRegistro" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Mensaje enviado</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>Hemos recibido su mensaje, te responderemos pronto</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<script src="../public/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    this.submit();
+    var myModal=new bootstrap.Modal(document.getElementById('modalRegistro'));
+  });
+</script>
+
