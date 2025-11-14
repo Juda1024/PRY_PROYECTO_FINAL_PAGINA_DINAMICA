@@ -6,8 +6,8 @@
     <div class="carousel-item active">
       <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="">
       <div class="carousel-container">
-        <h2>Bienvenido a nuestra Agencia Inmersiva<br></h2>
-        <p>Creando experiencias de realidad aumentada, realidad virtual y gemelos digitales para marcas que desean innovar en el mundo digital. Conectamos creatividad y tecnologia para transformar cualquier idea en una experiencia interactiva memorable.</p>
+        <h2>Bienvenido a AETHERLAB<br></h2>
+        <p>En AETHERLAB diseñamos experiencias de realidad aumentada, realidad virtual y gemelos digitales para marcas que desean liderar el futuro digital. Unimos creatividad y tecnologia para transformar cualquier idea en una experiencia inmersiva memorable.</p>
         <a href="#featured-services" class="btn-get-started">Iniciar Experiencia</a>
       </div>
     </div><!-- End Carousel Item -->
@@ -15,8 +15,8 @@
     <div class="carousel-item">
       <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="">
       <div class="carousel-container">
-        <h2>Experiencias AR y VR Premium</h2>
-        <p>Desarrollamos activaciones digitales, mundos inmersivos y contenido 3D de alta calidad para potenciar lanzamientos, eventos y campañas. Tu marca puede llevar a su publico a un nuevo nivel de interaccion.</p>
+        <h2>Experiencias AR y VR por AETHERLAB</h2>
+        <p>En AETHERLAB desarrollamos activaciones digitales, mundos inmersivos y contenido 3D de alto nivel para lanzamientos, eventos y campañas. Tu marca puede llevar a su publico a un nuevo nivel de interaccion.</p>
         <a href="#featured-services" class="btn-get-started">Iniciar Experiencia</a>
       </div>
     </div><!-- End Carousel Item -->
@@ -24,8 +24,8 @@
     <div class="carousel-item">
       <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="">
       <div class="carousel-container">
-        <h2>Digital Twins y Metaverso</h2>
-        <p>Creamos replicas digitales de productos y espacios, listas para exploracion interactiva. Tambien producimos eventos y experiencias dentro de entornos metaverso completamente personalizados.</p>
+        <h2>AETHERLAB: Digital Twins y Metaverso</h2>
+        <p>Creamos replicas digitales de productos y espacios listas para exploracion interactiva. En AETHERLAB tambien producimos eventos y experiencias dentro de entornos metaverso completamente personalizados.</p>
         <a href="#featured-services" class="btn-get-started">Iniciar Experiencia</a>
       </div>
     </div><!-- End Carousel Item -->
@@ -50,7 +50,7 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Nosotros</h2>
-    <p>Quienes Somos<br></p>
+    <p>AETHERLAB, quienes somos<br></p>
   </div><!-- End Section Title -->
 
   <div class="container">
@@ -59,18 +59,18 @@
 
       <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
         <p>
-          Somos una agencia especializada en experiencias inmersivas para marcas que buscan destacar. Nuestro equipo crea proyectos de realidad aumentada, realidad virtual y gemelos digitales con un enfoque en calidad, creatividad e innovacion.
+          AETHERLAB es una agencia especializada en experiencias inmersivas para marcas que buscan destacar. Nuestro equipo crea proyectos de realidad aumentada, realidad virtual y gemelos digitales con un enfoque en calidad, creatividad e innovacion.
         </p>
         <ul>
-          <li><i class="bi bi-check2-circle"></i> <span>Soluciones AR y VR adaptadas a campañas y lanzamientos.</span></li>
-          <li><i class="bi bi-check2-circle"></i> <span>Produccion de espacios virtuales y contenido interactivo.</span></li>
-          <li><i class="bi bi-check2-circle"></i> <span>Experiencias digitales premium listas para cualquier plataforma.</span></li>
+          <li><i class="bi bi-check2-circle"></i> <span>Soluciones AR y VR de AETHERLAB adaptadas a campañas y lanzamientos.</span></li>
+          <li><i class="bi bi-check2-circle"></i> <span>Produccion de espacios virtuales y contenido interactivo para marcas exigentes.</span></li>
+          <li><i class="bi bi-check2-circle"></i> <span>Experiencias digitales premium de AETHERLAB listas para cualquier plataforma.</span></li>
         </ul>
       </div>
 
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <p>Trabajamos junto a marcas, empresas y desarrolladores para crear experiencias digitales que generan impacto real. Desde conceptos iniciales hasta produccion completa, nuestro equipo de arquitectos virtuales lleva cada proyecto a su maximo nivel.</p>
-        <a href="about.html" class="read-more"><span>Leer Mas</span><i class="bi bi-arrow-right"></i></a>
+        <p>En AETHERLAB trabajamos junto a marcas, empresas y desarrolladores para crear experiencias digitales que generan impacto real. Desde conceptos iniciales hasta produccion completa, nuestro equipo de arquitectos virtuales lleva cada proyecto a su maximo nivel.</p>
+        <a href="./views/about.html" class="read-more" onclick="loadPage(event,this.href)"><span>Leer Mas</span><i class="bi bi-arrow-right"></i></a>
       </div>
 
     </div>
@@ -78,3 +78,21 @@
   </div>
 
 </section><!-- /About Section -->
+
+<script>
+    // Funcion para cargar contenido dinamico
+    function loadPage(event, url) {
+        event.preventDefault();  // Prevenir el comportamiento por defecto de los enlaces
+        const main = document.getElementById('main-content');
+        
+        // Cargar el contenido de la pagina usando fetch
+        fetch(url)
+            .then(response => response.text())  // Obtener el HTML de la pagina solicitada
+            .then(html => {
+
+                main.innerHTML = html;
+
+                new PureCounter();
+            });
+    }
+</script>
