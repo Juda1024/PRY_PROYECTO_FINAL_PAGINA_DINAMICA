@@ -15,7 +15,7 @@
           <br>
           Con nosotros podrás vivir todo lo que haz soñado.
         </p>
-        <a href="#featured-services" class="btn-get-started">Iniciar Experiencia</a>
+        <a href="#" class="btn-get-started" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Iniciar Experiencia</a>
       </div>
     </div><!-- End Carousel Item -->
 
@@ -24,7 +24,7 @@
       <div class="carousel-container">
         <h2>Experiencias AR y VR por AETHERLAB</h2>
         <p>En AETHERLAB desarrollamos activaciones digitales, mundos inmersivos y contenido 3D de alto nivel para lanzamientos, eventos y campanas. Tu marca puede llevar a su publico a un nuevo nivel de interaccion.</p>
-        <a href="#featured-services" class="btn-get-started">Iniciar Experiencia</a>
+        <a href="#" class="btn-get-started" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Iniciar Experiencia</a>
       </div>
     </div><!-- End Carousel Item -->
 
@@ -33,7 +33,7 @@
       <div class="carousel-container">
         <h2>AETHERLAB: Digital Twins y Metaverso</h2>
         <p>Creemos replicas digitales de productos y espacios listas para exploracion interactiva. En AETHERLAB tambien producimos eventos y experiencias dentro de entornos metaverso completamente personalizados.</p>
-        <a href="#featured-services" class="btn-get-started">Iniciar Experiencia</a>
+        <a href="#" class="btn-get-started" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Iniciar Experiencia</a>
       </div>
     </div><!-- End Carousel Item -->
 
@@ -90,6 +90,42 @@
   </div>
 
 </section><!-- /About Section -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="modalExperienciaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalExperienciaLabel">Bienvenido a la Experiencia AETHERLAB</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        
+        <img src="../public/img/logo.png" class="img-fluid mb-3 d-block mx-auto" alt="Experiencia AETHERLAB" width="324">
+
+        <p>
+          Estás a punto de escuchar una breve introducción a lo que hacemos en AETHERLAB. 
+          La realidad virtual y aumentada no es solo tecnología; es una nueva forma de contar historias, 
+          explorar mundos y conectar con tu audiencia.
+        </p>
+
+        <audio controls class="w-100">
+          <source src="../public/audio/presentacion.m4a" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 <script>
     // Funcion para cargar contenido dinamico
