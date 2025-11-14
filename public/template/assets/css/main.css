@@ -10,16 +10,55 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+.custom-checkbox .form-check-input {
+    appearance: none;
+    background-color: #f8f9fa;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  .custom-checkbox .form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .custom-checkbox .form-check-input:checked::before {
+    content: '✓';
+    color: white;
+    position: absolute;
+    left: 2px;
+    top: -2px;
+    font-size: 16px;
+  }
+
+  .custom-checkbox .form-check-label {
+    font-size: 16px;
+    color: #343a40;
+  }
+
+  .form-check-label a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .form-check-label a:hover {
+    text-decoration: underline;
+  }
 
 .pricing-item:hover {
-    background-color: #ff5252; /* Fondo rojo cuando se pasa el ratón */
-    color: black; /* Texto blanco cuando el fondo es rojo */
-    border: 1px solid #ff1744; /* Borde rojo cuando se pasa el ratón */
+    background-color: #ff5252; 
+    color: black; 
+    border: 1px solid #ff1744; 
   }
 
   .pricing .featured-mouse:hover h3 {
-  background: #da2e2e; /* Fondo rojo cuando se pasa el ratón */
-  color: white; /* Texto blanco cuando el fondo es rojo */
+  background: #da2e2e; 
+  color: white; 
 }
 
 /* Fonts */

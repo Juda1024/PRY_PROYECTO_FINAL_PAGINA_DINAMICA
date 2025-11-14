@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVER</title>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>AETHERLAB - Inmersion Virtual</title>
+    <meta name="description" content="AETHERLAB - Experiencias inmersivas en Realidad Virtual">
+    <meta name="keywords" content="Realidad Virtual, VR, Experiencias Virtuales, AETHERLAB">
+
+    <!-- Favicons -->
+    <link href="../public/template/assets/img/favicon.png" rel="icon">
+    <link href="../public/template/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../public/template/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/template/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../public/template/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../public/template/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../public/template/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../public/template/assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+    
+  <header>
+    <h1 class="site-heading text-center text-faded d-none d-lg-block">
+      <span class="site-heading-lower" style="font-weight: bold;">AETHERLAB - VR Experience</span>
+    </h1>
+  </header>
+
+  <main class="page-section text-center">
+    <div class="container">
+      <div class="bg-faded rounded p-5 shadow-sm mx-auto mt-5" style="max-width: 700px;">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper text-success">Datos recibidos</span>
+          <span class="section-heading-lower">Gracias por unirte a la experiencia VR</span>
+        </h2>
+
+        <p class="lead mb-4">
+          Hemos recibido correctamente tu solicitud para la experiencia en Realidad Virtual.  
+          En breve te contactaremos para confirmar los detalles de tu experiencia inmersiva.  
+          <br><br>
+          <strong>Gracias por confiar en AETHERLAB para vivir el futuro de la tecnología VR</strong>
+        </p>
+
+        <hr class="my-4">
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+          <a href="../index.html" class="btn btn-primary">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- Vendor JS Files -->
+    <script src="../public/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/template/assets/vendor/php-email-form/validate.js"></script>
+    <script src="../public/template/assets/vendor/aos/aos.js"></script>
+    <script src="../public/template/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../public/template/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../public/template/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../public/template/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../public/template/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../public/template/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../public/template/assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/purecounterjs@2.3.1/dist/purecounter_vanilla.js"></script>
+
+    <script>
+        // Función para cargar contenido dinámico
+        function loadPage(event, url) {
+            event.preventDefault();  // Prevenir el comportamiento por defecto de los enlaces
+            const main = document.getElementById('main-content');
+            
+            // Cargar el contenido de la página usando fetch
+            fetch(url)
+                .then(response => response.text())  // Obtener el HTML de la página solicitada
+                .then(html => {
+
+                    main.innerHTML = html;
+
+                    new PureCounter();
+                });
+        }
+
+        loadPage(new Event('load'), './views/home.html');
+    </script>
+
+</body>
+</html>
