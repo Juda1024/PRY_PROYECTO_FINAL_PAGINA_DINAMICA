@@ -52,8 +52,8 @@
           <li><a href="#hero" class="active">Home</a></li>
           <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="./views/team.html">Team</a></li>
+              <li><a href="./views/testimonials.html">Testimonials</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
@@ -65,20 +65,23 @@
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="./views/services.html">Services</a></li>
+          <li><a href="./views/portfolio.html">Portfolio</a></li>
+          <li><a href="./views/pricing.html">Pricing</a></li>
+          <li><a href="./views/blog.html">Blog</a></li>
+          <li><a href="./views/contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="about.html">Get Started</a>
+      <a class="btn-getstarted" href="./views/about.html">Get Started</a>
 
     </div>
   </header>
 
+<<<<<<< HEAD
+  <main class="main" id="main-content" >
+=======
   <main class="main">
 
     <!-- Hero Section -->
@@ -392,6 +395,7 @@
       </div>
 
     </section><!-- /Portfolio Section -->
+>>>>>>> 67a7e6a83767b6bd7525a7db3f68c21c54cf396e
 
   </main>
 
@@ -470,7 +474,8 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+   <!-- POR FAVOR VOLVER A ACTIVAR AL ULTIMO -->
+  <!-- <div id="preloader"></div> -->
 
   <!-- Vendor JS Files -->
   <script src="./public/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -485,6 +490,23 @@
 
   <!-- Main JS File -->
   <script src="./public/template/assets/js/main.js"></script>
+<<<<<<< HEAD
+
+
+  <script>
+        function loadPage(event, url) {
+            event.preventDefault();
+            const main = document.getElementById('main-content');
+            fetch(url)
+                .then(response => response.text())
+                .then(html => main.innerHTML = html);
+        }
+
+        loadPage(new Event('load'), './views/starter-page.html');
+    </script>
+
+=======
+>>>>>>> 67a7e6a83767b6bd7525a7db3f68c21c54cf396e
 
 </body>
 
